@@ -1,15 +1,25 @@
+// Пользователь -
 
-// Вася положил 12 000$ на вклад 7% годовых с капитализацией 1 раз в месяц. Вывести в консоль, сможет ли он купить дом за 13 500$ через 2 года после снятия вклада. И остаток после покупки.
-// Итог = Сумма * (1 + Ставка в месяц не в %) ^ срок в месяцах
+// Возраст
+// Наличие работы
+// Деньги
 
-const money = 5000;
-const house = 13500;
+// Нужно проверить может ли он купить новый MacBook за 2000$? Он может брать не только свои деньги, но и взять кредит. Ему дадут 500$, только если ему больше 24-х лет и он имеет работу, 100$ если ему просто больше 24-х лет и 0 в ином случае. Напишите функцию, которая принимает данные пользователя и товара и возвращает true или false.
 
-const finish1 = money*(1+0.07/12)**24;
-if (finish1 >= house) {
- console.log(`Мы накопили ${finish1}, остатвышиеся деньги - ${finish1 - house}`) 
-} else {
-    console.log(`Мы накопили ${finish1}, Купить не сможем`)
+function computerCredit(age, hasJob = false) {
+    switch(true) {
+    case age > 24 && hasJob == true:
+        return 500
+    case age > 24:
+        return 100
+        default: 
+        return 0
+    }
 }
 
+function canBuy(productPrice, age, money, hasJob = false) {
+    const creditMoney = computerCredit(age, hasJob)
+    return productPrice <= money + creditMoney
+}
 
+console.log(canBuy(2000, 25, 1500, true))
