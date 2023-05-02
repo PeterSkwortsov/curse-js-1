@@ -1,5 +1,19 @@
 
-const score = [5, 10, 0, 15];
-for (const [i, el] of score.entries()) {
-    console.log(`Раунд: ${i+1}: ${el}`)
+const transactionUSD = [10, -7, 50, -10 ,100];
+
+const transactionRUB = [];
+for (const transaction of transactionUSD) {
+transactionRUB.push(transaction * 60)
 }
+
+// console.log(transactionUSD)
+// console.log(transactionRUB)
+
+const transactionRUB2 = transactionUSD
+.map((transaction, i) => {
+    console.log(i)
+    return transaction * 60; 
+})
+
+console.log(transactionUSD)
+console.log(transactionRUB)
