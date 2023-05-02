@@ -1,28 +1,15 @@
-function add (a, b) {
-return a + b 
-}
 
-function subtract (a, b) {
-    return a - b
-}
-
-function power (a, b) {
-    return a **5
-}
-
-// функция высшего порядка
-
-function calculator (a, b, fn) {
-    const res = fn(a, b);
-    console.log(fn.name) 
-    return res
+function power (pow) {
+    return function (num) {
+        return num**pow;
     }
+}
 
-    let res = calculator (2, 5, add);
-    console.log(res)
+const powerOfTwo = power(2);
+console.log(powerOfTwo(5))
+console.log(powerOfTwo(10))
 
-    res = calculator (2, 5, subtract);
-    console.log(res)
+const powerOfThree = power(3);
+console.log(powerOfThree(10))
 
-    res = calculator (2, 5, power);
-    console.log(res)
+console.log(`Пока не понимаю - ${power(5)(4)}`)
