@@ -1,19 +1,11 @@
 
-const transactionUSD = [10, -7, 50, -10 ,100];
+// Найдите сумму всех целых чисел от 1 до 100. 
+// n * (n + 1) / 2
 
-const transactionRUB = [];
-for (const transaction of transactionUSD) {
-transactionRUB.push(transaction * 60)
+
+let sum = 0;
+
+for (let i = 1; i <= 100; i++) {
+sum += i;
+console.log(sum)
 }
-
-// console.log(transactionUSD)
-// console.log(transactionRUB)
-
-const transactionRUB2 = transactionUSD
-.map((transaction, i) => {
-    console.log(i)
-    return transaction * 60; 
-})
-
-console.log(transactionUSD)
-console.log(transactionRUB)
