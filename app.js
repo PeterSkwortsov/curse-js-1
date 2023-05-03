@@ -1,16 +1,26 @@
+/*Добавляем элементы в массив */
 
-let transactionUSD = [10, -7, 50, -10, 100];
-// let transactionRUB = [];
+const operationS = [12, -5, 44, -23, 34, 2];
+const positiveOperations = [];
+    for(let operation of operationS) {
+        if (operation > 0) {
+            positiveOperations.push(operation);
+        }
+    }
+    console.log(positiveOperations)
 
-    // for (let transaction of transactionUSD) {
-    //     transactionRUB.push(transaction * 60)
-    // }
 
-    // console.log(transactionUSD)
-    // console.log(transactionRUB)
+/*Фильтруем элименты через метод - фильтр */
+const positiveOperationsS = operationS.filter(operation => {
+    return operation < 1
+})
+console.log(positiveOperationsS)
 
-    const transactionRUB2 = transactionUSD.map((transaction, i) => {
-        return transaction *60
+
+/*Фильтруем и производим действие с элементом */
+const positiveRUBOperations = operationS
+    .filter(operation => {
+    return operation > 0
     })
-    console.log(transactionRUB2)
-
+    .map(operation => operation * 60)
+console.log(positiveRUBOperations)
