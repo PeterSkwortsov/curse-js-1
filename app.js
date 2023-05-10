@@ -1,22 +1,26 @@
+/* Преобразовать пользователя до вида 
+{ fullName: 'Вася Пупкин', skillNum: 2 }
+*/
 const users = [
-    {name: 'Вася', age: 30},
-    {name: 'Катя', age: 18},
-    {name: 'Аня', age: 40},
-    {name: 'Петя', age: 25},
-];
+{
+    name: 'Вася',
+    surname: 'Пупкин',
+    age: 30,
+    skills: ['Разработка', 'Dev0ps']
+},
+{
+    name: 'Катя',
+    surname: 'Белова',
+    age: 18,
+    skills: ['Дизайн']
+},
+]
 
-console.log(users.sort((a,b) => a.age - b.age));
-/*
-users.sort(function (a, b) {
-    if (a.age > b.age) {
-      return 1;
+const result = users.map(stroke => {
+    return {
+        fullName: `${stroke.name} ${stroke.surname}`,  
+        skillNum: stroke.skills.length
     }
-    if (a.age < b.age) {
-      return -1;
-    }
-    // a должно быть равным b
-    return 0;
-  });
+})
 
-  console.log(users)
-  */
+console.log(result)
