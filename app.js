@@ -1,20 +1,17 @@
+//Дан массив со строками. 
+//Оставьте в этом массиве только те строки, которые начинаются на http://.
 
-const sites = {
-    msk: {
-        let: 200,
-        temp: 50,
-    },
-    spb: {
-        it: 100,
-        temp: 5,
-    }
+
+var massive = ['Строка', 'Я не строка', 'www/help', 'http://', 'tttps'];
+
+var tmpArr = [];
+for (let i=0; i<massive.length; i++) {
+  if (massive[i].match(/ht/)) {
+    tmpArr.push(massive[i]);
+  }
 }
 
-let sumTemp = 0;
-let citesCount = Object.keys(sites).length
+massive = tmpArr;
+console.log(massive);
 
-for (const key of Object.keys(sites)) {
-    sumTemp += sites[key].temp;
-}
-console.log(sumTemp)
-console.log(sumTemp / citesCount)
+
