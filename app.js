@@ -1,17 +1,35 @@
-//Дан массив со строками. 
-//Оставьте в этом массиве только те строки, которые начинаются на http://.
+/* Сделать объект склад с методами добавления на склад, поиску по складу товара и расчет веса */
 
 
-var massive = ['Строка', 'Я не строка', 'www/help', 'http://', 'tttps'];
-
-var tmpArr = [];
-for (let i=0; i<massive.length; i++) {
-  if (massive[i].match(/ht/)) {
-    tmpArr.push(massive[i]);
-  }
+const werehouse = {
+    goods: [],
+    findGoodById: function () {},
+    addGood: function (good) {
+        const existedGood = this.goods.find(g => g.id == good.id);
+        this.goods.push(this.good)
+        return;
+    },
+    getWeight: () {},
 }
 
-massive = tmpArr;
-console.log(massive);
+// товары 
 
+const car = {
+    id: 1,
+    weight: {
+        kg: 1000
+    },
+    brand: 'Ford'
+};
 
+const chair = {
+    id: 2,
+    weight: {
+        kg: 2
+    },
+}
+
+const paper = {
+    id: 3,
+    color: 'red'
+}
