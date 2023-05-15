@@ -1,17 +1,12 @@
 
-// Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
+// Заполните массив случайными числами из промежутка от 1 до 100.
 
 
-let obj = [23, 10, 4, 95, 45];
-
-for (let key in obj) {
-    str = obj[key] + obj[key] * 0.1;  
-    console.log(str);
-   
+let randomArr = [];
+for (let i = 0; i < 10; i++) {  
+    randomArr.push(Math.floor(Math.random() * 100));
 }
 
-console.log(result);
-
-
+console.log(randomArr)
 
 
