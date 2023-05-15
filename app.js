@@ -1,12 +1,12 @@
 
-// Заполните массив случайными числами из промежутка от 1 до 100.
+// Дан некоторый массив, например, вот такой:
+// По очереди выведите в консоль подмассивы из двух элементов нашего массива
 
 
-let randomArr = [];
-for (let i = 0; i < 10; i++) {  
-    randomArr.push(Math.floor(Math.random() * 100));
+let array = [1, 2, 3, 4, 5, 6]; //массив, можно использовать массив объектов
+let subarray = []; //массив в который будет выведен результат.
+for (let i = 0; i < Math.ceil(array.length/2); i++){
+    subarray[i] = array.slice((i*2), (i*2) + 2);
 }
-
-console.log(randomArr)
-
+console.log(subarray);
 
