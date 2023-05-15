@@ -1,51 +1,17 @@
-/* Сделать объект склад с методами добавления на склад, поиску по складу товара и расчет веса */
+
+// Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
 
 
-const werehouse = {
-    goods: [],
-    findGoodById: function () {
-        return this.goods.find(g => g.id == id)
-       
-    },
-    addGood: function (good) {
-        const existedGood = this.findGoodById(good.id)
-        if (existedGood) {
-            console.log('Этот товар уже есть на складе')
-        }
-        this.goods.push(this.good)
-        return;
-    },
-    getWeight: function() {
-        return this.goods.reduce((acc, el) => 
-            acc += el.weight?.kg ? el.weight.kg : 0,
-         0)
-    }
-};
+let obj = [23, 10, 4, 95, 45];
 
-
-// товары 
-
-const car = {
-    id: 1,
-    weight: {
-        kg: 1000
-    },
-    brand: 'Ford'
-};
-
-const chair = {
-    id: 2,
-    weight: {
-        kg: 2
-    },
+for (let key in obj) {
+    str = obj[key] + obj[key] * 0.1;  
+    console.log(str);
+   
 }
 
-const paper = {
-    id: 3,
-    color: 'red'
-}
+console.log(result);
 
 
-werehouse.addGood(car);
-console.log(werehouse.goods);
-werehouse.addGood(car);
+
+
