@@ -3,14 +3,25 @@
 
 const werehouse = {
     goods: [],
-    findGoodById: function () {},
+    findGoodById: function () {
+        return this.goods.find(g => g.id == id)
+       
+    },
     addGood: function (good) {
-        const existedGood = this.goods.find(g => g.id == good.id);
+        const existedGood = this.findGoodById(good.id)
+        if (existedGood) {
+            console.log('Этот товар уже есть на складе')
+        }
         this.goods.push(this.good)
         return;
     },
-    getWeight: () {},
-}
+    getWeight: function() {
+        return this.goods.reduce((acc, el) => 
+            acc += el.weight?.kg ? el.weight.kg : 0,
+         0)
+    }
+};
+
 
 // товары 
 
@@ -33,3 +44,8 @@ const paper = {
     id: 3,
     color: 'red'
 }
+
+
+werehouse.addGood(car);
+console.log(werehouse.goods);
+werehouse.addGood(car);
