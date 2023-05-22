@@ -25,3 +25,10 @@ const bmv = {
 
 bmv.addDemeges = audi.addDemeges
 bmv.addDemeges ('Мотор', 4)
+
+const newFunction = audi.addDemeges;
+newFunction.call(bmv, 'колесо', 1)
+newFunction.call(audi, 'крыша', 5)
+
+newFunction.apply(audi, ['крыша', 5])
+newFunction.apply(bmv, ['кузов', 5])
