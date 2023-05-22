@@ -1,14 +1,19 @@
 'use strict'
-/* Даны числа, разделенные запятыми:
 
-
-Найдите сумму этих чисел.
- */
-
-let num = '12,34,56';
-
-function add(string){ 
-    return string.split(',').reduce(function(a,b){return +a+(+b); });  
+const audi = {
+    make: 'Audo',
+    model: 'A3',
+    year: 2023,
+    dameges: [],
+    addDemeges (part, rate) {
+        console.log(`У авто ${this.model} ${this.make} ${this.year} добавлено повереждение: 
+        ${part} со степенью ${rate}`)
+        this.dameges.push({
+            part,
+            rate
+        })
+    }
 }
 
-console.log(add(num))
+audi.addDemeges ('капот', 2)
+
