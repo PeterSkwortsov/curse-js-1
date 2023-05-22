@@ -14,6 +14,14 @@ const audi = {
         })
     }
 }
-
 audi.addDemeges ('капот', 2)
 
+const bmv = {
+    make: 'Bmv',
+    model: 'А5',
+    year: 2021,
+    dameges: [],
+};
+
+bmv.addDemeges = audi.addDemeges
+bmv.addDemeges ('Мотор', 4)
